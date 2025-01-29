@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Classroom</title>
+    <link rel="stylesheet" href="virtual.css">
+</head>
+<body>
+    <div class="classroom-container">
+        <!-- Login Section -->
+        <div id="loginSection" class="login-section">
+            <h2>Virtual Classroom</h2>
+            <select id="userTypeSelect">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+            </select>
+            <input type="text" id="usernameInput" placeholder="Enter Username">
+            <button id="loginBtn">Enter Classroom</button>
+        </div>
+
+        <!-- Classroom Dashboard -->
+        <div id="classroomDashboard" class="classroom-dashboard hidden">
+            <div class="sidebar">
+                <div class="user-profile">
+                    <span id="userProfileName">Username</span>
+                    <span id="userProfileType">User Type</span>
+                </div>
+                <div class="classroom-list">
+                    <h3>Classrooms</h3>
+                    <ul id="classroomList"></ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <!-- Classroom Selection -->
+                <div id="classroomSelection" class="classroom-selection">
+                    <h2>Select or Create a Classroom</h2>
+                    <div class="classroom-actions">
+                        <input type="text" id="newClassroomName" placeholder="New Classroom Name">
+                        <button id="createClassroomBtn">Create Classroom</button>
+                    </div>
+                    <div id="availableClassrooms" class="available-classrooms"></div>
+                </div>
+
+                <!-- Active Classroom -->
+                <div id="activeClassroom" class="active-classroom hidden">
+                    <div class="classroom-header">
+                        <h2 id="activeClassroomName">Classroom Name</h2>
+                        <button id="leaveClassroomBtn">Leave Classroom</button>
+                    </div>
+
+                    <!-- Chat Section -->
+                    <div class="chat-section">
+                        <div id="chatMessages" class="chat-messages"></div>
+                        <div class="chat-input">
+                            <input type="text" id="chatMessageInput" placeholder="Type a message...">
+                            <button id="sendMessageBtn">Send</button>
+                        </div>
+                    </div>
+
+                    <!-- Collaborative Tools -->
+                    <div class="collaborative-tools">
+                        <div class="whiteboard">
+                            <canvas id="whiteboardCanvas" width="800" height="400"></canvas>
+                        </div>
+                        <div class="tool-controls">
+                            <button id="clearWhiteboardBtn">Clear Whiteboard</button>
+                            <input type="color" id="colorPicker" value="#000000">
+                            <input type="range" id="lineWidth" min="1" max="20" value="5">
+                        </div>
+                    </div>
+
+                    <!-- File Sharing -->
+                    <div class="file-sharing">
+                        <input type="file" id="fileInput" multiple>
+                        <button id="shareFilesBtn">Share Files</button>
+                        <ul id="sharedFilesList"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="virtual.js"></script>
+</body>
+</html>
